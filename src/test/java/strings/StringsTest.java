@@ -43,5 +43,14 @@ public class StringsTest {
 		assertEquals("3.14", Double.toString(3.14));
 		assertEquals(3.14, Double.parseDouble("3.14"), 0.1);
 	}
+	
+	@Test
+	public void formattedStrings() {
+		System.out.printf("%8.2f",  1000.0 / 3.0); // Field width of 8, 2 digits precision
+		
+		// Create a formatted string without printing it
+		String msg = String.format("Hi, %s, next year you'll be %d.\n", "Helen", 42);
+		assertEquals("Hi, Helen, next year you'll be 42.\n", msg);
+	}
 
 }
