@@ -49,7 +49,7 @@ public class StringsTest {
 		System.out.printf("%8.2f",  1000.0 / 3.0); // Field width of 8, 2 digits precision
 		
 		// Create a formatted string without printing it
-		String msg = String.format("Hi, %s, next year you'll be %d.\n", "Helen", 42);
+		String msg = strings.formatString("Hi, %s, next year you'll be %d.\n", "Helen", 42);
 		assertEquals("Hi, Helen, next year you'll be 42.\n", msg);
 	}
 
