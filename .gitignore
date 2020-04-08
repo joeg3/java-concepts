@@ -5,6 +5,9 @@
 .settings
 bin/
 
+### IntelliJ ###
+.idea
+
 ### Java ###
 .class
 .ear
