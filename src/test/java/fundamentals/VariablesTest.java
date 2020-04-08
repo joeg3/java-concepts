@@ -1,15 +1,15 @@
 package fundamentals;
 
-import static org.junit.Assert.assertEquals;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-import org.junit.Before;
-import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class VariablesTest {
 	
 	public Variables variables;
 	
-	@Before
+	@BeforeEach
 	public void setup() {
 		variables = new Variables();
 	}
