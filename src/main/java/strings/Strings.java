@@ -18,6 +18,23 @@ public class Strings {
 	public String formatString(String str, String name, int age) {
 		return String.format(str, name, age);
 	}
+
+	public String join(String delimiter, String... strings) {
+		return String.join(delimiter, strings);
+	}
+
+	public String[] split(String delimiter, String str) {
+		return str.split(delimiter);
+	}
+
+	public String stringBuilder(String... strings) {
+		StringBuilder builder = new StringBuilder();
+		for (String s : strings) {
+			builder.append(s);
+		}
+
+		return builder.toString();
+	}
 	
 
 }

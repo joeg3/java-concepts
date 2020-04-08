@@ -1,5 +1,6 @@
 package strings;
 
+import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
@@ -51,6 +52,25 @@ public class StringsTest {
 		// Create a formatted string without printing it
 		String msg = strings.formatString("Hi, %s, next year you'll be %d.\n", "Helen", 42);
 		assertEquals("Hi, Helen, next year you'll be 42.\n", msg);
+	}
+
+	@Test
+	public void join() {
+		String[] months = {"Jan", "Feb", "Mar"};
+		assertEquals("Jan|Feb|Mar", strings.join("|", months));
+	}
+
+	@Test
+	public void split() {
+		String[] months = {"Jan", "Feb", "Mar"};
+		String regexDelimiter = "\\|"; // Note Java splits based on regex, so escape pipe so it isn't interpreted as an OR
+		assertArrayEquals(months, strings.split(regexDelimiter, "Jan|Feb|Mar"));
+	}
+
+	@Test
+	public void stringBuilder() {
+		String[] months = {"Jan", "|", "Feb", "|", "Mar"};
+		assertEquals("Jan|Feb|Mar", strings.stringBuilder(months));
 	}
 
 }
