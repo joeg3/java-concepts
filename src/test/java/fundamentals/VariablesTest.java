@@ -7,7 +7,6 @@ import org.junit.jupiter.api.Test;
 
 
 public class VariablesTest {
-
   public Variables variables;
 
   @BeforeEach

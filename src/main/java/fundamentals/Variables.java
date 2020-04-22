@@ -1,7 +1,6 @@
 package fundamentals;
 
 public class Variables {
-  final int DAYS_PER_WEEK = 7;
 
   public int declareVariableInMethod() {
     int x;
