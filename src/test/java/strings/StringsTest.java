@@ -42,8 +42,8 @@ public class StringsTest {
   public void conversionBetweenStringsAndNumbers() {
     assertEquals("42", Integer.toString(42));
     assertEquals(42, Integer.parseInt("42"));
-    assertEquals("3.14", Double.toString(3.14));
-    assertEquals(3.14, Double.parseDouble("3.14"), 0.1);
+    assertEquals("1.23", Double.toString(1.23));
+    assertEquals(1.23, Double.parseDouble("1.23"), 0.1);
   }
 
   @Test
