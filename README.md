@@ -8,7 +8,8 @@ A project where I learn/practice Java concepts
 - From IntelliJ: Create a run configuration for the `test` folder by right-clicking on it and selecting `Run tests in ...`
 
 Notes:
-- For `System.out.println("Hello");`, `System.out` is an object; an instance of the `PrintStream` class. The `PrintStream` class has methods `println()` , `print()`, etc.
+- For `System.out.println("Hello");`, the `System` class declares a constant `public static final PrintStream out` (One of the few times a constant isn't uppercase). So `System.out` is an object; an instance of the `PrintStream` class. The `PrintStream` class has methods `println()` , `print()`, etc.
+- Strings are immutable. If you have a string `str`, then `str = str + 'hi'`, the word 'hi' isn't appended to `str`, instead a new string is created.
 
 References:
 - Core Java SE 9 for the Impatient, Second Edition, by Cay Horstmann

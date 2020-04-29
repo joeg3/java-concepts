@@ -13,12 +13,12 @@ public class StringsTest {
   public Strings strings;
 
   @BeforeEach
-     	public void setup() {
+  void setup() {
     strings = new Strings();
   }
 
   @Test
-  public void testCompareTo() {
+  void testCompareTo() {
     // See comment on the method under test about problems using compareTo()
     assertTrue(
         strings.useCompareTo("word", "world") < 0); // Negative since 4th character d comes before l
@@ -31,7 +31,7 @@ public class StringsTest {
    * string variable is null,  it will still work correctly.
    */
   @Test
-  public void testEquals() {
+  void testEquals() {
     String str = "Hello";
     assertTrue("Hello".equals(str));
     str = "hi";
@@ -39,7 +39,7 @@ public class StringsTest {
   }
 
   @Test
-  public void conversionBetweenStringsAndNumbers() {
+  void conversionBetweenStringsAndNumbers() {
     assertEquals("42", Integer.toString(42));
     assertEquals(42, Integer.parseInt("42"));
     assertEquals("1.23", Double.toString(1.23));
@@ -47,7 +47,7 @@ public class StringsTest {
   }
 
   @Test
-  public void formattedStrings() {
+  void formattedStrings() {
     System.out.printf("%8.2f", 1000.0 / 3.0); // Field width of 8, 2 digits precision
 
     // Create a formatted string without printing it
@@ -56,13 +56,13 @@ public class StringsTest {
   }
 
   @Test
-  public void join() {
+  void join() {
     String[] months = {"Jan", "Feb", "Mar"};
     assertEquals("Jan|Feb|Mar", strings.join("|", months));
   }
 
   @Test
-  public void split() {
+  void split() {
     String[] months = {"Jan", "Feb", "Mar"};
     String regexDelimiter =
         "\\|"; // Note Java splits based on regex, so escape pipe so it isn't interpreted as an OR
@@ -70,9 +70,17 @@ public class StringsTest {
   }
 
   @Test
-  public void stringBuilder() {
+  void stringBuilder() {
     String[] months = {"Jan", "|", "Feb", "|", "Mar"};
     assertEquals("Jan|Feb|Mar", strings.stringBuilder(months));
+  }
+
+  @Test
+  void unicodeCharacter() {
+    // We can get this from going to https://unicode-table.com/en/
+    // and finding that the copyright symbol is in row 'A' and column '9'
+    String copyright2020 = strings.returnUnicodeCopyrightSymbol();
+    assertEquals("\u00A9 2020", copyright2020);
   }
 
 }
