@@ -10,7 +10,7 @@ import org.junit.jupiter.api.Test;
 
 public class StringsTest {
 
-  public Strings strings;
+  private Strings strings;
 
   @BeforeEach
   void setup() {
