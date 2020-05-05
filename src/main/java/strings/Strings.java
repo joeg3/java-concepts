@@ -35,4 +35,10 @@ public class Strings {
 
     return builder.toString();
   }
+
+  public String returnUnicodeCopyrightSymbol() {
+    // We can get this from going to https://unicode-table.com/en
+    // and finding that the copyright symbol is in row 'A' and column '9'
+    return "\u00A9 2020";
+  }
 }

@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 public class ArraysTest {
 
   @Test
-  public void arrayCopyWrongWay() {
+  void arrayCopyWrongWay() {
     String[] states = {"WI", "CA", "MN"};
     String[] copiedStates = states;
     assertEquals(states[1], copiedStates[1]);
@@ -21,7 +21,7 @@ public class ArraysTest {
   }
 
   @Test
-  public void arrayCopyRightWay() {
+  void arrayCopyRightWay() {
     String[] states = {"WI", "CA", "MN"};
     String[] copiedStates = Arrays.copyOf(states, states.length);
     assertEquals(states[1], copiedStates[1]);

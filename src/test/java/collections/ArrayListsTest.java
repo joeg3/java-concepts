@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
 public class ArrayListsTest {
 
   @Test
-  public void arrayListCreation() {
+  void arrayListCreation() {
 
     // Right side uses diamond syntax, <String> is inferred from left side
     ArrayList<String> states = new ArrayList<>();
@@ -21,7 +21,7 @@ public class ArrayListsTest {
   }
 
   @Test
-  public void arrayListAddAndDelete() {
+  void arrayListAddAndDelete() {
 
     ArrayList<String> states = new ArrayList<>();
     states.add("MN");

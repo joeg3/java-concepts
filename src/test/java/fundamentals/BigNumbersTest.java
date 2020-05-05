@@ -9,21 +9,21 @@ import org.junit.jupiter.api.Test;
 
 public class BigNumbersTest {
 
-  public BigNumbers bn;
+  private BigNumbers bn;
 
   @BeforeEach
-  public void setup() {
+  void setup() {
     bn = new BigNumbers();
   }
 
   @Test
-  public void useBigInteger() {
+  void useBigInteger() {
     BigInteger bi = bn.useBigInteger();
     assertEquals(0, bi.compareTo(new BigInteger("30000000000000000000")));
   }
 
   @Test
-  public void useBigDecimal() {
+  void useBigDecimal() {
     BigDecimal bd = bn.useBigDecimal();
     assertEquals(0, bd.compareTo(new BigDecimal("0.9")));
   }
