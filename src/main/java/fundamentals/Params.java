@@ -1,5 +1,9 @@
 package fundamentals;
 
+import java.sql.SQLOutput;
+import java.util.ArrayList;
+import java.util.List;
+
 public class Params {
 
   /**
@@ -21,5 +25,18 @@ public class Params {
       total += num;
     }
     return total;
+  }
+
+  public void addStringToArrayList(ArrayList<String> list) {
+    list.add("Added Element");
+  }
+
+  public void addThreeToInt(int number) {
+    number += 3;
+    //System.out.println("addThreeToInt() Number = " + number);
+  }
+
+  public void tryToAssignToDifferentList(ArrayList<String> list) {
+    list = new ArrayList<>(List.of("Paris", "London"));
   }
 }
