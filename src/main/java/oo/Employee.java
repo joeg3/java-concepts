@@ -1,4 +1,4 @@
-package oo.lambdas;
+package oo;
 
 public class Employee {
   private String name;
@@ -19,7 +19,8 @@ public class Employee {
     return "Employee: " + name + ", salary: " + salary + ", bonus: " + bonus + ", compensation: " + (salary + bonus);
   }
 
-  public String getName() {
+  // This method is final, cannot be overridden by subclasses
+  public final String getName() {
     return name;
   }
 

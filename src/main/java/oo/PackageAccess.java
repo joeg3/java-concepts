@@ -8,4 +8,10 @@ public class PackageAccess {
 
   void defaultCanOnlyBeUsedByClassesAndMethodsInThisPackage() {}
 
+  protected void protectedMethods() {
+    // Can be accessed within the enclosing class
+    // Can be accessed by other classes in the same package
+    // Can be accessed by subclasses regardless of package
+  }
+
 }

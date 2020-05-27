@@ -7,10 +7,12 @@ public class DigitSequence implements IntSequence {
     number = n;
   }
 
+  @Override
   public boolean hasNext() {
     return number != 0;
   }
 
+  @Override
   public int next() {
     int result = number % 10;
     number /= 10;
