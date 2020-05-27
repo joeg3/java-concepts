@@ -2,11 +2,23 @@ package enumeratedtypes;
 
 public class EnumeratedTypes {
 
-  // This was touched on in section on constants
+  // Here is a typical example of using an enumerated type for related constants
+  public enum Weekday { MON, TUE, WED, THU, FRI, SAT, SUN };
 
-  // Here is an example of using an enumerated type for related constants
+  // You can add constructors, methods and fields to an enumerated type:
+  public enum Size {
+    // Here, "S" is the argument passed to the constructor for SMALL
+    SMALL("S"), MEDIUM("M"), LARGE("L"), EXTRA_LARGE("XL");
 
-  enum Weekday { MON, TUE, WED, THU, FRI, SAT, SUN }
+    private String abbreviation;
 
-  // Need to learn how to use it in chapter 4
+    // Constructor of an enumeration must be private. You can omit private modifier, but would get an error if declared public or protected
+    Size(String abbreviation) {
+      this.abbreviation = abbreviation;
+    }
+
+    public String getAbbreviation() { return abbreviation; }
+  }
+
+  // You can add methods to each
 }

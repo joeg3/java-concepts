@@ -12,7 +12,9 @@ public class ExtendInterfaces implements Channel {
 
   // For this class to implement Channel, it also has to implement Closeable's method
 
+  @Override
   public boolean isOpen() {return true;}
 
+  @Override
   public void close() {}
 }

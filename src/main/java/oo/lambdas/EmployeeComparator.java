@@ -1,6 +1,7 @@
 package oo.lambdas;
 
 import java.util.Comparator;
+import oo.Employee;
 
 public class EmployeeComparator implements Comparator<Employee> {
 
