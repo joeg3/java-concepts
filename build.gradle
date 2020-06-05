@@ -1,7 +1,7 @@
 plugins {
     id 'java-library'
     id 'checkstyle'
-    id "com.github.spotbugs" version "4.0.5"
+    id "com.github.spotbugs" version "4.2.2"
 }
 
 repositories {
@@ -14,8 +14,8 @@ repositories {
 dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.1'
     spotbugsPlugins 'com.h3xstream.findsecbugs:findsecbugs-plugin:1.10.1'
-    spotbugs 'com.github.spotbugs:spotbugs:4.0.2'
-    spotbugs 'com.github.spotbugs:spotbugs-annotations:4.0.2'
+    spotbugs 'com.github.spotbugs:spotbugs:4.0.3'
+    spotbugs 'com.github.spotbugs:spotbugs-annotations:4.0.3'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.6.1'
 }
 
