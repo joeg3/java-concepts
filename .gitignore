@@ -26,3 +26,6 @@ test-output/
 
 ### Vagrant ###
 .vagrant
+
+### File testing ###
+mytestfile.txt

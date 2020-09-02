@@ -22,6 +22,11 @@ A project where I learn/practice Java concepts
 - An interface can extend another interface.
 - Interfaces can contain default methods that are implemented. They can also have private methods.
 
+#### I/O
+- Input/Output Streams are used for reading and writing bytes.
+- Readers and Writers are used for reading and writing characters.
+- A good practice is to use a try-with-resources statement for closing streams, etc.
+
 References:
 - Core Java SE 9 for the Impatient, Second Edition, by Cay Horstmann
 - Udemy Java Programming Masterclass
