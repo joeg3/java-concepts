@@ -5,12 +5,15 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Comparator;
 import java.util.IntSummaryStatistics;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
+import oo.Department;
+import oo.Employee;
 import org.junit.jupiter.api.Test;
 
 /*
@@ -38,6 +41,7 @@ public class StreamsTest {
     }
     assertEquals(4, iterationCount);
 
+    // Streams don't alter their source - in this case cities
     long streamCount = cities.stream()
         .filter(c -> c.length() > 7)
         .count();
@@ -80,6 +84,7 @@ public class StreamsTest {
   @Test
   void reductions() { // Reductions is the name for terminal operations, reduce stream to non-stream value
     // Optional provides a better way of handling an empty stream, rather than dealing with null
+    // Once a terminal operation is used on a stream, the stream can no longer be used
     Optional<String> largest = cities.stream().max(String::compareToIgnoreCase);
     assertEquals("Winona", largest.orElse(""));
 
@@ -105,5 +110,47 @@ public class StreamsTest {
     IntSummaryStatistics summary = cities.stream().collect(Collectors.summarizingInt(String::length));
     double averageWordLength = summary.getAverage();
     double maxWordLength = summary.getMax();
+  }
+
+  @Test
+  void anotherExample() {
+    List<String> bingoNumbers = Arrays.asList("N40", "N36", "B12", "B1", "G53", "G49", "G60", "G50", "g64", "O71");
+
+    bingoNumbers
+        .stream()
+        .map(String::toUpperCase)
+        .filter(s->s.startsWith("G"))
+        .sorted()
+        .forEach(System.out::println); // forEach is a terminal operation
+
+    List<String> gNumbers = bingoNumbers
+        .stream()
+        .map(String::toUpperCase)
+        .filter(s->s.startsWith("G"))
+        .sorted()
+        .collect(Collectors.toList()); // can also collect to a list
+  }
+
+  @Test
+  void flatMapToCombineMultipleListsIntoOneStream() {
+    Employee jim = new Employee("Jim");
+    Employee jane = new Employee("Jane");
+    Employee steve = new Employee("Steve");
+    Employee karen = new Employee("Karen");
+
+    Department hr = new Department("Human Resources");
+    hr.addEmployee(jim);
+    hr.addEmployee(jane);
+    Department acct = new Department("Accounting");
+    acct.addEmployee(steve);
+    acct.addEmployee(karen);
+
+    List<Department> departments = new ArrayList<>();
+    departments.add(hr);
+    departments.add(acct);
+
+    // This combines multiple lists into one stream
+    long allEmployeeCount = departments.stream().flatMap(department -> department.getEmployees().stream()).count();
+    assertEquals(4, allEmployeeCount);
   }
 }

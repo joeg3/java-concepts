@@ -28,11 +28,18 @@ public class ArrayListsTest {
     states.add("MN");
     states.add("CA");
     assertEquals("CA", states.get(1));
-    states.set(1, "WI");
+    states.set(1, "WI"); // set() replaces what was there
     assertEquals("WI", states.get(1));
     assertEquals(2, states.size());
+
+    states.add(1, "CA"); // add() inserts value at position and moves rest of list down one
+    assertEquals("CA", states.get(1));
+    assertEquals("WI", states.get(2));
+    assertEquals(3, states.size());
+
     states.remove(1);
-    assertEquals(1, states.size());
+    assertEquals(2, states.size());
+    assertEquals("WI", states.get(1)); // elements after deleted element move back one
 
     // No initializer for array lists, but you can pass in a list
     List<String> cities = new ArrayList<>(List.of("Paris", "London"));
