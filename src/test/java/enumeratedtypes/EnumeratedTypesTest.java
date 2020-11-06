@@ -1,13 +1,15 @@
 package enumeratedtypes;
 
 import static enumeratedtypes.EnumeratedTypes.Weekday;
-// import static enumeratedtypes.EnumeratedTypes.Weekday.*;  Doing this would allow you to reference THU instead of Weekday.THU
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 import org.junit.jupiter.api.Test;
 
 public class EnumeratedTypesTest {
@@ -52,6 +54,13 @@ public class EnumeratedTypesTest {
     assertEquals(7, weekdays.length);
     assertEquals(Weekday.THU, weekdays[3]);
     assertEquals("THU", weekdays[3].toString());
+  }
+
+  @Test
+  void getArrayOfEnumValues() {
+    List<String> weekdays = Stream.of(Weekday.values()).map(Weekday::name).collect(Collectors.toList());
+    assertEquals(7, weekdays.size());
+    assertEquals("THU", weekdays.get(3));
   }
 
   @Test
