@@ -49,7 +49,7 @@ public class FindOneTest {
     String regex = ".*MN.*";
     assertTrue(Pattern.matches(regex, str1));
 
-    // Compile the regex if used many times
+    // Compile the regex if used many times, and then create a Matcher for each input
     Pattern pattern = Pattern.compile(regex);
     Matcher matcher = pattern.matcher(str1);
     assertTrue(matcher.matches());

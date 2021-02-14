@@ -27,6 +27,27 @@ public class FindAllTest {
   }
 
   @Test
+  void splitAlongDelimiter() {
+    String str1 = "TX, MN, CA, MN, WI, MT";
+    Pattern pattern = Pattern.compile("\\s*,\\s*");
+    String[] states = pattern.split(str1);
+    assertEquals(6, states.length);
+    assertEquals("TX", states[0]);
+    assertEquals("MN", states[1]);
+    assertEquals("CA", states[2]);
+  }
+
+  @Test
+  void splitWithStringSplitMethod() {
+    String str1 = "TX, MN, CA, MN, WI, MT";
+    String[] states = str1.split("\\s*,\\s*");
+    assertEquals(6, states.length);
+    assertEquals("TX", states[0]);
+    assertEquals("MN", states[1]);
+    assertEquals("CA", states[2]);
+  }
+
+  @Test
   void findAllMatches() {
     String str1 = "TX, MN, CA, MN, WI, MT";
     String regex = "M\\w+";
